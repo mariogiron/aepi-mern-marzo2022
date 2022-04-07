@@ -17,6 +17,8 @@ app.post('/formulario', (req, res) => {
 });
 
 // Pongo el server a escuchar
-app.listen(process.env.PORT, () => {
-    console.log('Servidor escuchando en puerto ' + process.env.PORT);
+// const PORT = process.env.PORT ? process.env.PORT : 3000;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log('Servidor escuchando en puerto ' + PORT);
 });
