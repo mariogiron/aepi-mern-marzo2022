@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const fs = require('fs');
+const dayjs = require('dayjs');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -19,6 +21,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+/** MIDDLEWARES */
+app.use((req, res, next) => {
+  console.log(new Date());
+  next();
+});
+
+// Middleware que escriba en un fichero datos de la petición
+app.use((req, res, next) => {
+  const str = `[${dayjs().format('DD-MM-YYYY HH:mm')}] Método: ${req.method}. Url: ${req.url}\n`;
+  fs.appendFileSync('./server.log', str);
+  next();
+});
+
+
 
 // Gestión de RUTAS
 app.use('/', indexRouter);

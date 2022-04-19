@@ -5,3 +5,6 @@ POST http://localhost:3000/users/create
 
 ###
 GET http://localhost:3000/products/edit
+
+###
+GET http://localhost:3000/products/123
