@@ -22,6 +22,11 @@ router.get('/:productId', (req, res) => {
     res.send('Devuelvo el detalle del producto');
 });
 
+router.post('/new', (req, res) => {
+    console.log(req.body.stock);
+    res.send('Creación de productos');
+});
+
 module.exports = router;
 
 // Create Read Update     Delete
@@ -37,3 +42,6 @@ module.exports = router;
 // /ficheros/documento.csv
 // /ficheros/documento.pdf
 // /ficheros/curriculum.md
+
+
+

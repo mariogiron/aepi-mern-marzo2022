@@ -1,4 +1,4 @@
-GET http://localhost:3000
+GET http://localhost:3000/products?page=10&limit=20
 
 ###
 POST http://localhost:3000/users/create
@@ -8,3 +8,29 @@ GET http://localhost:3000/products/edit
 
 ###
 GET http://localhost:3000/products/123
+
+###
+POST http://localhost:3000/products/new
+Content-Type: application/json
+
+{
+    "name": "Microondas",
+    "price": 399,
+    "category": "kitchen",
+    "stock": 100
+}
+
+#################
+## PRUEBAS API ##
+#################
+
+GET http://localhost:3000/api/products
+
+###
+GET http://localhost:3000/api/products/price/100
+
+###
+POST http://localhost:3000/api/products
+
+###
+PUT http://localhost:3000/api/products/8
