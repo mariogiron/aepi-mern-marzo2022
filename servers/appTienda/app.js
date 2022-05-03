@@ -37,8 +37,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
 // Gestión de RUTAS
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

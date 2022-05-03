@@ -31,6 +31,52 @@ GET http://localhost:3000/api/products/price/100
 
 ###
 POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "Lápiz verde",
+    "description": "Pinta muy verde",
+    "category": "office",
+    "price": 1,
+    "stock": 200,
+    "available": true
+}
 
 ###
-PUT http://localhost:3000/api/products/8
+PUT http://localhost:3000/api/products/626ae045f3be178566f6bb2d
+Content-Type: application/json
+
+{
+    "price": 2500,
+    "stock": 100,
+    "available": true
+}
+
+###
+DELETE http://localhost:3000/api/products/626ae045f3be178566f6bb2d
+
+
+###############
+## API USERS ##
+###############
+
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "Manolo",
+    "email": "a@a.es",
+    "username": "manu",
+    "password": "12345",
+    "age": 65,
+    "active": true
+}
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "",
+    "password": "12345"
+}
