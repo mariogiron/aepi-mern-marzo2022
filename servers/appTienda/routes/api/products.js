@@ -3,6 +3,9 @@ const Product = require('../../models/product.model');
 
 // GET http://localhost:3000/api/products
 router.get('/', (req, res) => {
+
+    console.log(req.user);
+
     Product.find()
         .then(products => {
             res.json(products);

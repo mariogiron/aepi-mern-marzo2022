@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 
 const User = require('../../models/user.model');
+const { createToken } = require('../../helpers/utils');
 
 // Los datos del registro vendrán dentro de req.body
 router.post('/register',
@@ -50,7 +51,6 @@ router.post('/login', async (req, res) => {
         return res.json({ error: 'Error en usuario y/o contraseña' });
     }
 
-    console.log(req.body.password, user.password);
     const equals = bcrypt.compareSync(req.body.password, user.password);
 
     if (!equals) {
@@ -58,7 +58,10 @@ router.post('/login', async (req, res) => {
         return res.json({ error: 'Error en usuario y/o contraseña' });
     }
 
-    res.json({ message: 'Login correcto' });
+    res.json({
+        message: 'Login correcto',
+        token: createToken(user)
+    });
 
 });
 
