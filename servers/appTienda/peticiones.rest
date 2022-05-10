@@ -25,7 +25,7 @@ Content-Type: application/json
 #################
 
 GET http://localhost:3000/api/products
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjI3MTZmMGUxNmQ3ODJhNzQzZWNiNzM1IiwiZXhwX2F0IjoxNjUxNzc3MDg2LCJpYXQiOjE2NTE3NzY3ODZ9.lkBF4Z_jBI4RAYm94DfMB4wi-i8nsa2UxiGdKvRKRI0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjI3MTZmMGUxNmQ3ODJhNzQzZWNiNzM1IiwiZXhwX2F0IjoxNjUxNzc3ODgwLCJpYXQiOjE2NTE3Nzc1ODB9.7FBnEjZq0y3qSeN76DLJ0tHvXw0_dRyXL3L58OnTLKc
 
 ###
 GET http://localhost:3000/api/products/price/100
@@ -61,7 +61,7 @@ DELETE http://localhost:3000/api/products/626ae045f3be178566f6bb2d
 ## API USERS ##
 ###############
 
-POST http://localhost:3000/api/users/register
+POST http://cef38d3ff126.ngrok.io/api/users/register
 Content-Type: application/json
 
 {
@@ -74,7 +74,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/users/login
+POST http://cef38d3ff126.ngrok.io/api/users/login
 Content-Type: application/json
 
 {
