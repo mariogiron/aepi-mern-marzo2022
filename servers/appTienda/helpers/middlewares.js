@@ -32,6 +32,22 @@ const checkToken = async (req, res, next) => {
     next();
 }
 
+const checkAdmin = (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.json({ error: 'Debes ser administrador' });
+    }
+    next();
+}
+
+const checkRole = (role) => {
+    return (req, res, next) => {
+        if (req.user.role !== role) {
+            return res.json({ error: `Debes tener el role: ${role} para poder acceder` });
+        }
+        next();
+    }
+}
+
 module.exports = {
-    checkToken
+    checkToken, checkAdmin, checkRole
 }

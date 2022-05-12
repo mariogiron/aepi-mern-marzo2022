@@ -10,6 +10,7 @@ Respuesta:
 # Crear un artículo
 
 POST /api/articles
+Body 
 
 Respuesta: 
 - Respuesta correcta: status 200 y formato json
@@ -17,5 +18,12 @@ Respuesta:
 - Si los datos que inserto se guardan en la BD
 
 # Actualizar un artículo
+
+PUT /api/articles/ARTICLEID
+Body -> todos los datos que vamos a actualizar
+
+Respuesta:
+- Respuesta correcta: status 200 y format json
+- Si en el articulo editado están los valores que hemos pasado para cambiar
 
 # Borrar un artículo

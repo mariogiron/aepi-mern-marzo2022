@@ -7,7 +7,8 @@ const userSchema = new Schema({
     username: String,
     password: String,
     age: Number,
-    active: Boolean
+    active: Boolean,
+    role: { type: 'String', default: 'regular' }
 });
 
 module.exports = mongoose.model('user', userSchema);

@@ -25,7 +25,7 @@ Content-Type: application/json
 #################
 
 GET http://localhost:3000/api/products
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjI3MTZmMGUxNmQ3ODJhNzQzZWNiNzM1IiwiZXhwX2F0IjoxNjUxNzc3ODgwLCJpYXQiOjE2NTE3Nzc1ODB9.7FBnEjZq0y3qSeN76DLJ0tHvXw0_dRyXL3L58OnTLKc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjI3ZDRlYThkOTMxM2EzMTQzNTdkMjAyIiwiZXhwX2F0IjoxNjUyMzgwMDg1LCJpYXQiOjE2NTIzNzk3ODV9.ttNcqUIsMtcr61CrAbDU6W4iT_o2eJ9JEtPDwIr2L8I
 
 ###
 GET http://localhost:3000/api/products/price/100
@@ -61,12 +61,12 @@ DELETE http://localhost:3000/api/products/626ae045f3be178566f6bb2d
 ## API USERS ##
 ###############
 
-POST http://cef38d3ff126.ngrok.io/api/users/register
+POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
     "name": "Manolo",
-    "email": "a@a.es",
+    "email": "manolo@gmail.com",
     "username": "manu",
     "password": "12345",
     "age": 65,
@@ -74,10 +74,22 @@ Content-Type: application/json
 }
 
 ###
-POST http://cef38d3ff126.ngrok.io/api/users/login
+POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "mario@gmail.com",
+    "email": "manolo@gmail.com",
     "password": "12345"
+}
+
+###
+POST http://localhost:3000/api/articles
+Content-Type: application/json
+
+{
+    "title": "Título 1",
+    "text": "Texto 1",
+    "createdAt": "2022-05-12",
+    "category": "sports",
+    "author": "Laura"
 }
