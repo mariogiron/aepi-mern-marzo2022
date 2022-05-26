@@ -33,6 +33,13 @@ const Formulario = () => {
         });
     }
 
+    const cambiarEdad = () => {
+        setPersona({
+            ...persona,
+            edad: 45
+        });
+    }
+
     return <div>
         <p>Nombre: {persona.nombre}</p>
         <p>Apellidos: {persona.apellidos}</p>
@@ -64,6 +71,7 @@ const Formulario = () => {
             </div>
             <input type="submit" value="Enviar" />
         </form>
+        <button onClick={cambiarEdad}>Cambiar Edad</button>
     </div>
 
 }

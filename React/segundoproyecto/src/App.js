@@ -1,5 +1,8 @@
 import './App.css';
 import Botones from './components/Botones';
+import Bucles from './components/Bucles';
+import CicloVida from './components/CicloVida';
+import Condicionales from './components/Condicionales';
 import Contador from './components/Contador';
 import Formulario from './components/Formulario';
 
@@ -14,7 +17,10 @@ function App() {
     <div className="App">
       {/* <Botones /> */}
       {/* <Contador contadorEn10={onContadorEn10} /> */}
-      <Formulario />
+      {/* <Formulario /> */}
+      {/* <CicloVida /> */}
+      {/* <Condicionales /> */}
+      <Bucles />
     </div>
   );
 }
