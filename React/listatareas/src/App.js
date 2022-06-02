@@ -17,6 +17,9 @@ function App() {
 
   const onBorraTarea = (index) => {
     console.log('Borramos la tarea ' + index);
+    const arrTareasCopia = [...arrTareas];
+    arrTareasCopia.splice(index, 1);
+    setArrTareas(arrTareasCopia);
   }
 
   return (
