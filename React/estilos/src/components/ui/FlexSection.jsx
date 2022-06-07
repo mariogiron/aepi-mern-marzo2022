@@ -5,6 +5,7 @@ const FlexSection = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-direction: ${props => props.direction};
     gap: ${props => props.gap + 'px'};
 `;
 
