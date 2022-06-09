@@ -1,0 +1,27 @@
+.usuarios {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: 1fr 2fr 1fr 1fr; */
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
+}
+
+.usuarios img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.usuario {
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.usuario:last-child {
+    grid-column: 1/3;
+    grid-row: 2/4;
+}

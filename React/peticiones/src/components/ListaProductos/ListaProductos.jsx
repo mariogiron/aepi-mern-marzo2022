@@ -10,6 +10,13 @@ const ListaProductos = () => {
     const [productos, setProductos] = useState([]);
     const [pagina, setPagina] = useState(1);
 
+
+
+
+
+
+
+
     useEffect(() => {
         fetch('https://peticiones.online/api/products?page=' + pagina)
             .then(result => result.json())
@@ -18,6 +25,16 @@ const ListaProductos = () => {
             })
             .catch(error => console.log(error));
     }, [pagina]);
+
+
+
+
+
+
+
+
+
+
 
     return <div className={classes.productos}>
         <div>
