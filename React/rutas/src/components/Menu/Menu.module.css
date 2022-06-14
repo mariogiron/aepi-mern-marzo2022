@@ -1,0 +1,12 @@
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu li {
+    border: 1px solid dodgerblue;
+    background-color: lightblue;
+    padding: 10px 20px;
+}
