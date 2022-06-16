@@ -13,23 +13,19 @@ const Menu = () => {
 
     return <nav>
         <ul className={classes.menu}>
-            <li>
-                <NavLink
-                    style={({ isActive }) => {
-                        return {
-                            backgroundColor: isActive ? 'yellowgreen' : ''
-                        }
-                    }}
-                    to="/">
-                    Página de inicio
-                </NavLink>
-            </li>
-            <li>
-                <Link to="/informacion">Información</Link>
-            </li>
-            <li>
-                <Link to="sobre-mi">Sobre mi</Link>
-            </li>
+            {menuElements.map(element => (
+                <li>
+                    <NavLink
+                        style={({ isActive }) => {
+                            return {
+                                backgroundColor: isActive ? 'yellowgreen' : ''
+                            }
+                        }}
+                        to={element.to}>
+                        {element.title}
+                    </NavLink>
+                </li>
+            ))}
         </ul>
     </nav>
 }
