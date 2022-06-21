@@ -1,20 +1,37 @@
 import { useForm } from "react-hook-form";
+import { dniValidator } from "../validators";
+import { newContactoContext } from "../contexts/ContactosProvider";
+import { useContext } from 'react';
 
 const Formulario = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const agregarContacto = useContext(newContactoContext);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        watch
+    } = useForm({
+        defaultValues: {
+            nombre: 'Luisa',
+            apellidos: 'Ruiz',
+            email: 'luisa@gmail.com',
+            dni: '88888888Y'
+        }
+    });
 
     const enviaFormulario = (data) => {
-        console.log(data);
+        agregarContacto(data);
     }
 
     return <div>
         <h2>Formulario</h2>
+        <div>
+            <p>Campo nombre: {watch('nombre')}</p>
+            <p>Campo apellidos: {watch('apellidos')}</p>
+        </div>
         <form onSubmit={handleSubmit(enviaFormulario)}>
-
-
-
-
             <div className="mb-3">
                 <label className="form-label">Nombre</label>
                 <input type="text"
@@ -26,11 +43,6 @@ const Formulario = () => {
                 />
                 {errors.nombre && <p className="text-danger">{errors.nombre.message}</p>}
             </div>
-
-
-
-
-
             <div className="mb-3">
                 <label className="form-label">Apellidos</label>
                 <input type="text"
@@ -56,10 +68,13 @@ const Formulario = () => {
                 <label className="form-label">DNI</label>
                 <input type="text"
                     className="form-control"
-                    {...register('dni')}
+                    {...register('dni', {
+                        validate: dniValidator
+                    })}
                 />
+                {errors.dni && <p className="text-danger">El DNI es incorrecto</p>}
             </div>
-            <input type="submit" value="Enviar" />
+            <input type="submit" value="Enviar" className="btn btn-outline-info" />
         </form>
     </div>
 }
