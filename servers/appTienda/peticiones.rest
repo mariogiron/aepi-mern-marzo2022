@@ -25,7 +25,6 @@ Content-Type: application/json
 #################
 
 GET http://localhost:3000/api/products
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjI3ZDRlYThkOTMxM2EzMTQzNTdkMjAyIiwiZXhwX2F0IjoxNjUyMzgwMDg1LCJpYXQiOjE2NTIzNzk3ODV9.ttNcqUIsMtcr61CrAbDU6W4iT_o2eJ9JEtPDwIr2L8I
 
 ###
 GET http://localhost:3000/api/products/price/100
@@ -35,12 +34,12 @@ POST http://localhost:3000/api/products
 Content-Type: application/json
 
 {
-    "name": "Lápiz verde",
-    "description": "Pinta muy verde",
+    "name": "Boli rojo",
+    "description": "No se gasta",
     "category": "office",
-    "price": 1,
+    "price": 2,
     "stock": 200,
-    "available": true
+    "available": false
 }
 
 ###
@@ -93,3 +92,29 @@ Content-Type: application/json
     "category": "sports",
     "author": "Laura"
 }
+
+
+
+
+
+####
+POST http://localhost:3000/api/departments
+Content-Type: application/json
+
+{
+    "name": "oficina",
+    "description": "material de oficina",
+    "created_at": "2022-06-23 14:34"
+}
+
+###
+POST http://localhost:3000/api/departments/add-product
+Content-Type: application/json
+
+{
+    "product_id": "62b4a2cb88fc4afce5a8f15b",
+    "department_id": "62b4a1012314174315b752de"
+}
+
+###
+GET http://localhost:3000/api/departments

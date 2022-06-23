@@ -7,6 +7,8 @@ router.get('/', (req, res) => {
     console.log(req.user);
 
     Product.find()
+        .populate('department')
+        .exec()
         .then(products => {
             res.json(products);
         })

@@ -7,7 +7,8 @@ const productSchema = new Schema({
     price: Number,
     category: String,
     stock: Number,
-    available: Boolean
+    available: Boolean,
+    department: { type: Schema.Types.ObjectId, ref: 'department' }
 });
 
 module.exports = mongoose.model('product', productSchema);
